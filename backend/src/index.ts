@@ -4,6 +4,8 @@ import cors from 'cors';
 import authRoutes from './routes/authRoutes';
 import farmRoutes from './routes/farmRoutes';
 import plotRoutes from './routes/plotRoutes';
+import cropCycleRoutes from './routes/cropCycleRoutes';
+import syncRoutes from './routes/syncRoutes';
 
 dotenv.config();
 
@@ -16,6 +18,8 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/farms', farmRoutes);
 app.use('/api/plots', plotRoutes);
+app.use('/api/crop-cycles', cropCycleRoutes);
+app.use('/api/sync', syncRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('AgriBloom Backend API');

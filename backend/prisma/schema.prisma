@@ -49,8 +49,32 @@ model Plot {
   status      PlotStatus @default(IDLE)
   farmId      String
   farm        Farm     @relation(fields: [farmId], references: [id])
+  cropCycles  CropCycle[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model CropCycle {
+  id              String   @id @default(uuid())
+  plotId          String
+  plot            Plot     @relation(fields: [plotId], references: [id])
+  cropName        String
+  plantedDate     DateTime
+  expectedHarvest DateTime?
+  actualHarvest   DateTime?
+  yieldQuantity   Float?
+  yieldUnit       String?
+  status          CropStatus @default(PLANTED)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+enum CropStatus {
+  PLANTED
+  GROWING
+  READY_TO_HARVEST
+  HARVESTED
+  FAILED
 }
 
 enum PlotStatus {
