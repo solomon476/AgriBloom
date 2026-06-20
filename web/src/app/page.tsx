@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const backgrounds = [
   "/backgrounds/bg1.jpg",
@@ -47,12 +48,12 @@ export default function Home() {
             The lightweight, offline-first platform designed for Kenyan farmers. Digitize your crop cycles, automate expense logging, and simplify your operations.
           </p>
           <div className="flex gap-4 justify-center pt-4">
-            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/dashboard" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block text-center">
               Get Started
-            </button>
-            <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3 rounded-full font-bold text-lg transition-all backdrop-blur-sm shadow-sm hover:shadow-md">
+            </Link>
+            <Link href="/dashboard" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3 rounded-full font-bold text-lg transition-all backdrop-blur-sm shadow-sm hover:shadow-md inline-block text-center">
               Learn More
-            </button>
+            </Link>
           </div>
         </div>
 
