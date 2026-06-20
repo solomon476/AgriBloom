@@ -10,6 +10,9 @@ import transactionRoutes from './routes/transactionRoutes';
 import ocrRoutes from './routes/ocrRoutes';
 import voiceRoutes from './routes/voiceRoutes';
 import reportRoutes from './routes/reportRoutes';
+import mpesaRoutes from './routes/mpesaRoutes';
+import africasTalkingRoutes from './routes/africasTalkingRoutes';
+import kamisRoutes from './routes/kamisRoutes';
 
 dotenv.config();
 
@@ -28,6 +31,9 @@ app.use('/api/transactions', transactionRoutes);
 app.use('/api/ocr', ocrRoutes);
 app.use('/api/voice', voiceRoutes);
 app.use('/api/reports', reportRoutes);
+app.use('/api/mpesa', mpesaRoutes);
+app.use('/api/sms', africasTalkingRoutes);
+app.use('/api/kamis', kamisRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('AgriBloom Backend API');
