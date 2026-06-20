@@ -33,10 +33,10 @@ export default function RootLayout({
             </Link>
             <nav className="hidden md:flex gap-6 font-medium text-sm">
               <Link href="/dashboard" className="text-primary hover:text-accent transition-colors">Dashboard</Link>
-              <Link href="/dashboard" className="text-primary hover:text-accent transition-colors">Farms</Link>
-              <Link href="/dashboard" className="text-primary hover:text-accent transition-colors">Reports</Link>
+              <Link href="/farms" className="text-primary hover:text-accent transition-colors">Farms</Link>
+              <Link href="/reports" className="text-primary hover:text-accent transition-colors">Reports</Link>
             </nav>
-            <Link href="/dashboard" className="bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block text-center">
+            <Link href="/auth/signin" className="bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block text-center">
               Sign In
             </Link>
           </header>
