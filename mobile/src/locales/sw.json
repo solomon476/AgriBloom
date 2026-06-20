@@ -1,0 +1,14 @@
+{
+  "welcome": "Karibu AgriBloom",
+  "dashboard": "Dashibodi",
+  "farms": "Mashamba Yangu",
+  "plots": "Vipande vya Ardhi",
+  "add_farm": "Ongeza Shamba Jipya",
+  "syncing": "Inasawazisha data ya nje ya mtandao...",
+  "offline_mode": "Uko nje ya mtandao. Mabadiliko yamehifadhiwa kwenye simu.",
+  "expenses": "Gharama",
+  "income": "Mapato",
+  "crop_cycle": "Mzunguko wa Mazao",
+  "log_expense": "Weka Gharama",
+  "save": "Hifadhi"
+}

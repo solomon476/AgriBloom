@@ -6,6 +6,9 @@ import farmRoutes from './routes/farmRoutes';
 import plotRoutes from './routes/plotRoutes';
 import cropCycleRoutes from './routes/cropCycleRoutes';
 import syncRoutes from './routes/syncRoutes';
+import transactionRoutes from './routes/transactionRoutes';
+import ocrRoutes from './routes/ocrRoutes';
+import voiceRoutes from './routes/voiceRoutes';
 
 dotenv.config();
 
@@ -20,6 +23,9 @@ app.use('/api/farms', farmRoutes);
 app.use('/api/plots', plotRoutes);
 app.use('/api/crop-cycles', cropCycleRoutes);
 app.use('/api/sync', syncRoutes);
+app.use('/api/transactions', transactionRoutes);
+app.use('/api/ocr', ocrRoutes);
+app.use('/api/voice', voiceRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('AgriBloom Backend API');

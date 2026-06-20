@@ -1,0 +1,14 @@
+{
+  "welcome": "Welcome to AgriBloom",
+  "dashboard": "Dashboard",
+  "farms": "My Farms",
+  "plots": "Plots",
+  "add_farm": "Add New Farm",
+  "syncing": "Syncing offline data...",
+  "offline_mode": "You are offline. Changes saved locally.",
+  "expenses": "Expenses",
+  "income": "Income",
+  "crop_cycle": "Crop Cycle",
+  "log_expense": "Log Expense",
+  "save": "Save"
+}
