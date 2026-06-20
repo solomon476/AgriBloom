@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
+import Header from "@/components/Header";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -20,26 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
         <div className="min-h-screen bg-background text-foreground flex flex-col">
-          <header className="w-full py-4 px-8 flex justify-between items-center border-b border-primary/10 bg-white/50 backdrop-blur-md sticky top-0 z-50">
-            <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/logo.png"
-                alt="AgriBloom Logo"
-                width={44}
-                height={44}
-                className="object-contain"
-              />
-              <h1 className="text-2xl font-bold tracking-tight text-primary">Agri<span className="text-secondary">Bloom</span></h1>
-            </Link>
-            <nav className="hidden md:flex gap-6 font-medium text-sm">
-              <Link href="/dashboard" className="text-primary hover:text-accent transition-colors">Dashboard</Link>
-              <Link href="/farms" className="text-primary hover:text-accent transition-colors">Farms</Link>
-              <Link href="/reports" className="text-primary hover:text-accent transition-colors">Reports</Link>
-            </nav>
-            <Link href="/auth/signin" className="bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block text-center">
-              Sign In
-            </Link>
-          </header>
+          <Header />
           <main className="flex-1 flex flex-col items-center justify-center p-8">
             {children}
           </main>
