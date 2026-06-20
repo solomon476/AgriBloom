@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  firstName String
+  lastName  String
+  role      Role     @default(FARMER)
+  phone     String?  @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  farms     Farm[]
+}
+
+enum Role {
+  FARMER
+  MANAGER
+  ADMIN
+}
+
+model Farm {
+  id          String   @id @default(uuid())
+  name        String
+  location    String?
+  sizeHectares Float?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  plots       Plot[]
+}
+
+model Plot {
+  id          String   @id @default(uuid())
+  name        String
+  sizeHectares Float?
+  cropType    String?
+  status      PlotStatus @default(IDLE)
+  farmId      String
+  farm        Farm     @relation(fields: [farmId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum PlotStatus {
+  IDLE
+  PLANTED
+  GROWING
+  READY_TO_HARVEST
+  HARVESTED
+}
